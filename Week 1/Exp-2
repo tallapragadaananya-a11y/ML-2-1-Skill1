@@ -1,0 +1,24 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from matplotlib.backends.backend_pdf import PdfPages
+
+CSV_PATH = "placement_predict_50k.csv"
+df = pd.read_csv(CSV_PATH)
+
+sns.set_style("whitegrid")   # optional: gives cleaner-looking charts
+num_cols = ['CGPA', 'AttendancePercent', 'AptitudeTestScore',
+            'CodingTestScore', 'SoftSkillsRating', 'Salary Package']
+num_cols = ['CGPA', 'AttendancePercent', 'AptitudeTestScore',
+            'CodingTestScore', 'SoftSkillsRating', 'Salary Package']
+num_cols = ['CGPA', 'AttendancePercent', 'AptitudeTestScore',
+            'CodingTestScore', 'SoftSkillsRating', 'Salary Package']
+num_cols = ['CGPA', 'AttendancePercent', 'AptitudeTestScore',
+            'CodingTestScore', 'SoftSkillsRating', 'Salary Package']
+fig1 = plt.figure(figsize=(10, 6))
+sns.heatmap(df.isnull(), cbar=False, cmap="viridis", yticklabels=False)
+plt.title("Missingness Heatmap - Placement Prediction Dataset")
+plt.xlabel("Columns")
+plt.tight_layout()
+plt.show()
